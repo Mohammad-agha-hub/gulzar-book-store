@@ -34,7 +34,7 @@ const Genre = ({genres}:Genres) => {
 
           <div className="grid grid-cols-4 gap-4">
             {genres.map((genre,index)=>(
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
+            <div key={index} className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
               <Image
                 src={genre.image}
                 width={270}
