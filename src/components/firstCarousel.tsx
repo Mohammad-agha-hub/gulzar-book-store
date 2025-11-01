@@ -4,8 +4,17 @@ import Image from "next/image";
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+interface image {
+  title:string,
+  condition:string,
+  price:string,
+  image:string
+}
+interface Images {
+  images:image[]
+}
 
-const FirstCarousel = () => {
+const FirstCarousel = ({images}:Images) => {
   const [sliderRef] = useKeenSlider({
     loop: false,
     mode: "free-snap",
@@ -33,11 +42,7 @@ const FirstCarousel = () => {
     },
   });
 
-  const books = Array(6).fill({
-    title: "شفای زندگی",
-    condition: "در حد نو",
-    price: "۱۳۰٬۲۵۰",
-  });
+  
 
   return (
     <div className="flex justify-center mt-3 px-4 sm:px-6 lg:px-8">
@@ -65,7 +70,7 @@ const FirstCarousel = () => {
 
           {/* CAROUSEL */}
           <div ref={sliderRef} className="keen-slider w-full pt-3 pb-4">
-            {books.map((book, index) => (
+            {images.map((img, index) => (
               <div
                 key={index}
                 className="keen-slider__slide !min-w-[150px] sm:!min-w-[180px] md:!min-w-[200px] lg:!min-w-0"
@@ -76,7 +81,7 @@ const FirstCarousel = () => {
 
                   {/* Image on top */}
                   <Image
-                    src={"/book1.png"}
+                    src={img.image}
                     width={180}
                     height={150}
                     alt="book"
@@ -85,19 +90,19 @@ const FirstCarousel = () => {
 
                   {/* Button on top of image */}
                   <button className="absolute bottom-13 sm:bottom-16 text-xs sm:text-sm text-white bg-gradient-to-b from-[#9AD78B] px-3 sm:px-4 py-1 sm:py-[5px] rounded-2xl to-[#70B767] z-20">
-                    {book.condition}
+                    {img.condition}
                   </button>
 
                   {/* Title and price */}
                   <span className="absolute bottom-9 sm:bottom-8 text-sm sm:text-base z-20">
-                    {book.title}
+                    {img.title}
                   </span>
                   <div className="absolute flex gap-2 bottom-4 sm:bottom-3 z-20">
                     <span className="text-xs sm:text-sm text-green-600">
                       تومان
                     </span>
                     <span className="text-xs sm:text-sm text-green-600">
-                      {book.price}
+                      {img.price}
                     </span>
                   </div>
                 </div>

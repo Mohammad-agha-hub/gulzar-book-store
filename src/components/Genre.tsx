@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
-
-const Genre = () => {
+interface genre {
+  title:string,
+  image:string
+}
+interface Genres {
+  genres:genre[]
+}
+const Genre = ({genres}:Genres) => {
   return (
     <div className="flex justify-center mt-3 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-[1340px]">
@@ -27,150 +33,20 @@ const Genre = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-4">
+            {genres.map((genre,index)=>(
             <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
               <Image
-                src={"/genre1.png"}
+                src={genre.image}
                 width={270}
                 height={250}
                 alt="genres"
                 className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
               />
               <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
+                {genre.title}
               </span>
             </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
-            <div className="border flex flex-col gap-1 items-center  border-gray-200 bg-[#F5F5F5] rounded-lg p-3">
-              <Image
-                src={"/genre1.png"}
-                width={270}
-                height={250}
-                alt="genres"
-                className="border border-gray-300 bg-[#f5f5f5] rounded-lg p-2"
-              />
-              <span className="text-base font-medium text-[rgb(39,41,47)] mt-2">
-                کتاب شعر
-              </span>
-            </div>
+            ))}
           </div>
         </div>
       </div>
